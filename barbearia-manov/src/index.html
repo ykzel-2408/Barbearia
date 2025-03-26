@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Simple Website</h1>
+    </header>
+    
+    <section id="login">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+            <button type="button" id="registerButton">Register</button>
+        </form>
+    </section>
+
+    <section id="user-area">
+        <h2>User Area</h2>
+        <div id="user-info">
+            <p>Welcome, <span id="user-name">User</span>!</p>
+        </div>
+        <div id="post-feed">
+            <h3>Feed</h3>
+            <div id="posts"></div>
+            <form id="postForm">
+                <textarea id="postContent" placeholder="What's on your mind?" required></textarea>
+                <input type="file" id="mediaUpload" accept="image/*,video/*">
+                <button type="submit">Post</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
