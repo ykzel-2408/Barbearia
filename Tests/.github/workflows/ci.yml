@@ -1,0 +1,36 @@
+name: CI Pipeline
+
+# Eventos que disparam o fluxo de trabalho,EXEMPLO: push e pull_request
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Jobs a serem executados
+jobs:
+  build:
+    # Especifica o sistema operacional
+    runs-on: Windows-latest
+
+    # Passos do fluxo de trabalho
+    steps:
+      # Passo 1: Verificar repositório
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      # Passo 2: Configurar Node.js (ou outro ambiente, se necessário)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Passo 3: Instalar dependências
+      - name: Install dependencies
+        run: npm install
+
+      # Passo 4: Executar testes
+      - name: Run tests
+        run: npm test
